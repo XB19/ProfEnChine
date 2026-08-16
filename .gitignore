@@ -1,0 +1,19 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Secrets
+config/.env
+.env
+
+# Fichiers générés
+staticfiles/
+media/
+*.log
+
+# Éditeurs / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

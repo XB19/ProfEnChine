@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Fiche Prospect</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #111827;
+        }
+
+        .box {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Fiche Prospect</h1>
+
+<div class="box">
+    <span class="label">Téléphone :</span> {{ prospect.phone_number }}
+</div>
+
+<div class="box">
+    <span class="label">Objectif :</span> {{ prospect.objective }}
+</div>
+
+<div class="box">
+    <span class="label">Âge :</span> {{ prospect.age }}
+</div>
+
+<div class="box">
+    <span class="label">Nationalité :</span> {{ prospect.nationality }}
+</div>
+
+<div class="box">
+    <span class="label">Niveau :</span> {{ prospect.education_level }}
+</div>
+
+<div class="box">
+    <span class="label">Filière :</span> {{ prospect.current_field }}
+</div>
+
+<div class="box">
+    <span class="label">Programme :</span> {{ prospect.target_program }}
+</div>
+
+<div class="box">
+    <span class="label">Budget :</span> {{ prospect.budget }}
+</div>
+
+<div class="box">
+    <span class="label">Passeport :</span>
+    {% if prospect.passport is not None %}
+        {% if prospect.passport == True or prospect.passport == 'Oui' or prospect.passport == 'oui' %}
+            Oui
+        {% else %}
+            Non
+        {% endif %}
+    {% else %}
+        Non renseigné
+    {% endif %}
+</div>
+
+<h2>Derniers messages</h2>
+
+{% for msg in conversations %}
+    <div class="box">
+        <b>{{ msg.role }}</b><br>
+        {{ msg.message }}
+    </div>
+{% endfor %}
+
+</body>
+</html>

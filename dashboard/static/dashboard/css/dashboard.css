@@ -1,0 +1,222 @@
+
+/* =========================
+   META DEVELOPER STYLE - LIGHT
+========================= */
+
+:root {
+    --bg: #f6f7fb;
+    --sidebar: #ffffff;
+    --card: #ffffff;
+    --card-hover: #f9fafb;
+    --text: #0f172a;
+    --muted: #64748b;
+    --primary: #1a73e8; /* bleu Meta-like */
+    --border: #e5e7eb;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* =========================
+   SIDEBAR (META STYLE)
+========================= */
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    padding: 20px;
+}
+
+.sidebar .logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 30px;
+    letter-spacing: 0.3px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: 0.15s ease;
+    font-size: 14px;
+}
+
+.sidebar a i {
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.sidebar a:hover {
+    background: var(--card-hover);
+    color: var(--text);
+}
+
+.sidebar a:hover i {
+    color: var(--primary);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 260px;
+    padding: 25px;
+}
+
+/* =========================
+   TOPBAR (META STYLE)
+========================= */
+
+.topbar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.topbar h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.topbar p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* =========================
+   CARDS (META DASHBOARD)
+========================= */
+
+.card-custom {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    transition: 0.2s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-2px);
+    border-color: #dbeafe;
+    background: var(--card-hover);
+}
+
+.card-title {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.card-number {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 8px;
+    color: var(--text);
+}
+
+/* =========================
+   LISTE CONVERSATIONS (META INBOX STYLE)
+========================= */
+
+.conversation-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.15s;
+}
+
+.conversation-item:hover {
+    background: var(--card-hover);
+    border-color: #dbeafe;
+}
+
+.conversation-item strong {
+    font-size: 14px;
+}
+
+.conversation-item small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   BADGE (STYLE META STATUS)
+========================= */
+
+.badge-status {
+    background: #e8f0fe;
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* =========================
+   BUTTONS (META STYLE)
+========================= */
+
+.btn-primary-custom {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary-custom:hover {
+    background: #1558c0;
+}
+
+/* =========================
+   SCROLLBAR CLEAN
+========================= */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
