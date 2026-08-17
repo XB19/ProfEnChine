@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Count, Max
 
@@ -8,6 +9,7 @@ from whatsapp.views import send_whatsapp_message
 # =========================
 # DASHBOARD HOME
 # =========================
+@login_required
 def dashboard_home(request):
 
     prospects = ProspectProfile.objects.all()
@@ -38,6 +40,7 @@ def dashboard_home(request):
 # =========================
 # LISTE PROSPECTS
 # =========================
+@login_required
 def prospects_list(request):
 
     search = request.GET.get("search", "")
@@ -76,6 +79,7 @@ from ai_engine.scoring import calculate_ai_score
 from ai_engine.status import determine_status
 
 
+@login_required
 def prospect_detail(request, phone_number):
 
     prospect = get_object_or_404(
@@ -120,6 +124,7 @@ def prospect_detail(request, phone_number):
 # =========================
 # TOGGLE HUMAN TAKEOVER
 # =========================
+@login_required
 def toggle_human_takeover(request, phone_number):
 
     prospect = get_object_or_404(ProspectProfile, phone_number=phone_number)
@@ -137,6 +142,7 @@ def toggle_human_takeover(request, phone_number):
 # =========================
 # INBOX CONVERSATIONS
 # =========================
+@login_required
 def conversations_inbox(request):
 
     prospects = ProspectProfile.objects.all()
@@ -170,6 +176,7 @@ from io import BytesIO
 from conversations.models import ProspectProfile
 
 
+@login_required
 def download_prospect_pdf(request, phone_number):
 
     prospect = ProspectProfile.objects.get(phone_number=phone_number)

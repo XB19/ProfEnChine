@@ -13,6 +13,8 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
 
+    path('', include('accounts.urls')),
+
     path('api/ai/', include('ai_engine.urls')),
 
     path('dashboard/', include('dashboard.urls')),

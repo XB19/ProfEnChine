@@ -6,7 +6,10 @@ from openai import OpenAI
 load_dotenv()
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-MODEL = "llama-3.3-70b-versatile"
+# llama-3.3-70b-versatile a été retiré du catalogue Groq (modèle
+# déprécié) ; openai/gpt-oss-120b est le modèle généraliste recommandé
+# en remplacement (cf. https://console.groq.com/docs/models).
+MODEL = "openai/gpt-oss-120b"
 
 if GROQ_API_KEY:
     client = OpenAI(
