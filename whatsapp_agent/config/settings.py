@@ -189,6 +189,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Site vitrine (dossier frère site_vitrine/, hors de ce projet Django) :
+# servi tel quel à la racine "/" par config/urls.py.
+SITE_VITRINE_DIR = BASE_DIR.parent / "site_vitrine"
+
 # Authentification requise pour accéder au dashboard
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard_home'
