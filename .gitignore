@@ -3,8 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Secrets
-config/.env
+# Secrets (n'importe quel .env, à n'importe quelle profondeur)
 .env
 
 # Fichiers générés
