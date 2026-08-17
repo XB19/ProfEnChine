@@ -223,20 +223,17 @@ section {
 
 .logo {
     display: flex;
-    align-items: baseline;
-    gap: 2px;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: -0.01em;
+    align-items: center;
 }
 
-.logo .star {
-    color: var(--red);
+.logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
 }
 
-.logo .accent {
-    color: var(--red);
+.logo-footer .logo-img {
+    height: 52px;
 }
 
 .nav-links {
@@ -943,14 +940,6 @@ footer {
     }
 }
 
-.footer-grid .logo {
-    color: #fff;
-}
-
-.footer-grid .logo .star,
-.footer-grid .logo .accent {
-    color: var(--gold);
-}
 
 .footer-tagline {
     margin-top: 14px;
