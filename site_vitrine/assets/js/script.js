@@ -58,4 +58,50 @@ document.addEventListener("DOMContentLoaded", function () {
             el.classList.add("is-visible");
         });
     }
+
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // ---------------------------------------------------
+    // En-tête : ombre progressive + lien de nav actif
+    // ---------------------------------------------------
+    var header = document.querySelector(".site-header");
+    var sections = document.querySelectorAll("section[id]");
+    var navAnchors = document.querySelectorAll(".nav-links a");
+
+    function onScroll() {
+        if (header) {
+            header.classList.toggle("is-scrolled", window.scrollY > 12);
+        }
+
+        var current = "";
+        sections.forEach(function (section) {
+            var top = section.offsetTop - 130;
+            if (window.scrollY >= top) {
+                current = section.id;
+            }
+        });
+
+        navAnchors.forEach(function (link) {
+            link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+        });
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // ---------------------------------------------------
+    // Parallax discret sur le fond du hero
+    // ---------------------------------------------------
+    var hero = document.querySelector(".hero");
+
+    if (hero && !reducedMotion) {
+        window.addEventListener(
+            "scroll",
+            function () {
+                var offset = Math.min(window.scrollY, 600);
+                hero.style.backgroundPosition = "center " + (offset * 0.25) + "px";
+            },
+            { passive: true }
+        );
+    }
 });
